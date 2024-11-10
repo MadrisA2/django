@@ -37,9 +37,9 @@ def SDIndex(request, id):
     #TODO: сделать RequestForServersExtendedInfo, добавить визуализацию и обработку расширенной информации
     return render(request,"Server.html", context=data)  
 
-def SEIndex(request, id):
+def SEIndex(request, id):   #fix:    Не работает
     data = {"info":ServersExtendedInfo[id]}
-    return render(request,"EServer.html", context=data)  
+    return render(request,"EServer.html", context=data)     
 
 def about(request):
     return HttpResponse("""

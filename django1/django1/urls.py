@@ -19,7 +19,7 @@ from django.urls import path, re_path, include
 
 parrents = [
     path("<int:id>/", views.SDIndex),
-    path("<int:id>/Extended/", views.SEIndex),
+    path("<int:id>/Extended/", views.SEIndex), #fix:    Не работает
 ]
 urlpatterns = [
     re_path(r"^about", views.about),
