@@ -28,7 +28,7 @@ RequestForServersDefualtInfo()
 #Servers.ServersExtendedInfo()
 
 def index(request):
-    data = {"info":ServersDefualtInfo}
+    data = {"info":ServersDefualtInfo, "DorE":False}
     return render(request,"index.html", context=data)  #! Законченно!
 
 def SIndex(request, id, DorE):

@@ -12,3 +12,7 @@ function checkfield1()
             alert("One")
         }
     }
+function getCheckedRes(Defualt_or_Extended)
+    {
+        return Defualt_or_Extended
+    }
