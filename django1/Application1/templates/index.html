@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-{% load static%}
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static "css/stylesI.css" %}" />
+    <script src="{% static "js/TestCase1.js"%}"></script>
     <title>Главная</title>
 </head>
 <body>
@@ -12,7 +13,16 @@
         <h1>Servers list:</h1>
     {% for index, server in info.items%}
         <div class = "Listt">
-            <div class = "textT"> <big> <a href="server/{{index}}">{{index}}. {{server.label}}</a> </bm> </big> </div>
+            <div class = "textT"> 
+                <big>
+                    {% with  Defualt_or_Extended = Defualt_or_Extended %}
+                    {% if Defualt_or_Extended == false %}
+                        <a href="server/{{index}}">{{index}}. {{server.label}}</a> </bm>
+                    {% elif Defualt_or_Extended == true %}
+                        <a href="server/E{{index}}">{{index}}. {{server.label}}</a> </bm>
+                    {% endif %}
+                </big>
+            </div>
         </div>
     {%endfor%}
     </div>
@@ -20,16 +30,12 @@
         <form>
             <fieldset>
                 <legend>Какую информацию вы хотите получить?</legend>
-                <input type="radio" id = "radio1" name = "Info" value="Defualt" checked>
+                <input type="radio" id = "radio1" name = "Info" value="Defualt" checked="checked">
                 <label for="radio1">Defualt | Базовую</label><br>
                 <input type="radio" id = "radio2" name = "Info" value="Extended">
                 <label for="radio2">Extended | Расширеную</label><br>
-                <input type="button" id = "button1" value="Сохранить">
-                <script>
-                    s = document.getElementById(button1)
-                    
-                </script>
-            </fieldset> <!-- #TODO:(RequestForServersExtendedInfo) добавить блоки с выбором расширенной информации, и добавить скрипт js на обработку кнопок. *radio1,*radio2...-->
+                <input type="button" id = "SaveButton" value="Сохранить" onclick="checkfield1()">
+            </fieldset> <!-- #T ODO:(RequestForServersExtendedInfo) добавить блоки с выбором расширенной информации, и добавить скрипт js на обработку кнопок. *radio1,*radio2...-->
         </form>
     </div>
 </body>

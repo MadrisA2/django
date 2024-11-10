@@ -18,7 +18,8 @@ from Application1 import views
 from django.urls import path, re_path, include
 
 parrents = [
-    path("<int:id>/", views.indexSIndex)
+    path("<int:id>/", views.SDIndex),
+    path("E<int:id>/", views.SEIndex),
 ]
 urlpatterns = [
     re_path(r"^about", views.about),

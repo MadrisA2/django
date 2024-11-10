@@ -16,4 +16,7 @@
 .textT{
     transform: translate(-0.5px);
 }
+h1{
+    transform: translate(50px);
+}
 /* #TODO: Добавить стили для элементов из расширенной информации */
