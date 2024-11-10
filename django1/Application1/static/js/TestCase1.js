@@ -1,18 +1,25 @@
-let Defualt_or_Extended = false
+let Default_or_Extended = "Default";
 
-function checkfield1()
-    {
-        alert("BUTTON IS CLICKED")
+function updateLinks() {
+    const selectedOption = document.querySelector('input[name="Info"]:checked').value;
+    const links = document.querySelectorAll('.server-link');
+    
+    links.forEach(link => {
+        const index = link.textContent.split('.')[0]; // Получаем индексы из текста ссылки
+        link.href = `server/${index}/${selectedOption}`; // Обновляем href
+    });
+    
+    ChangeText(); // Изменяем текст на основе выбранного значения
+}
 
-        if(document.getElementById("radio1").checked){
-            Defualt_or_Extended = false
-            alert("Zero")
-        }else if(document.getElementById("radio2").checked){
-            Defualt_or_Extended = true
-            alert("One")
-        }
-    }
-function getCheckedRes(Defualt_or_Extended)
-    {
-        return Defualt_or_Extended
-    }
+function ChangeText() {
+    document.querySelector(".settextbox").textContent = Default_or_Extended;
+}
+
+// Обновление выбранного значения при клике на радио-кнопку
+document.querySelectorAll('input[name="Info"]').forEach((radio) => {
+    radio.addEventListener('change', () => {
+        Default_or_Extended = radio.value;
+        updateLinks(); // Обновляем ссылки при изменении radio
+    });
+});

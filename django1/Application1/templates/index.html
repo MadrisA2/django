@@ -5,38 +5,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static "css/stylesI.css" %}" />
-    <script src="{% static "js/TestCase1.js" %}"></script>
+    <link rel="stylesheet" href="{% static 'css/stylesI.css' %}" />
+    <script src="{% static 'js/TestCase1.js' %}" defer></script>
     <title>Главная</title>
 </head>
 
 <body>
-
     <div class="Body">
-        <h1>Servers list:</h1>
-        {% for index, server in info.items%}
+        <h1>Список серверов:</h1>
+        {% for index, server in info.items %}
         <div class="Listt">
             <div class="textT">
                 <big>
-
-                    <a href="server/{{index}}">{{index}}. {{server.label}}</a> </bm>
-
+                    <a href="server/{{ index }}/Default" class="server-link">{{ index }}. {{ server.label }}</a>
                 </big>
             </div>
         </div>
-        {%endfor%}
+        {% endfor %}
     </div>
+
     <div style="display: flex; transform: translate(15%, -500%);">
-        <form>
+        <form id="infoForm">
             <fieldset>
                 <legend>Какую информацию вы хотите получить?</legend>
-                <input type="radio" id="radio1" name="Info" value="Defualt" checked="checked">
-                <label for="radio1">Defualt | Базовую</label><br>
+                <input type="radio" id="radio1" name="Info" value="Default" checked>
+                <label for="radio1" onclick="updateLinks();">Базовую</label><br>
                 <input type="radio" id="radio2" name="Info" value="Extended">
-                <label for="radio2">Extended | Расширеную</label><br>
-                <input type="button" id="SaveButton" value="Сохранить" onclick="checkfield1()" method="POST">
+                <label for="radio2" onclick="updateLinks();">Расширенную</label><br>
             </fieldset>
-            <!-- #TODO:(RequestForServersExtendedInfo) добавить блоки с выбором расширенной информации, и добавить скрипт js на обработку кнопок. *radio1,*radio2...-->
         </form>
     </div>
 </body>
