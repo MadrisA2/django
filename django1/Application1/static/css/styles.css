@@ -1,0 +1,152 @@
+
+.label{
+    background-color: yellow;
+    text-align: center;
+    border: 3px solid blue;
+    margin: auto;
+    text-transform: capitalize;
+}
+.blocks{
+    min-width: 200px;
+    width: auto;
+    font-size: 16px;
+    position: relative;
+}
+.block1{
+    background-color: aqua;
+    text-transform: capitalize;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 300px;
+    width: auto;
+    height: 50px;
+    margin: 1px;
+    border: 2px solid black;
+}
+.block2{
+    background-color: antiquewhite;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 300px;
+    width: auto;
+    height: 50px;
+    margin: 1px;
+    border: 2px solid black;
+}
+.block3{
+    display:flex;
+    
+            /* Position 1 */
+        justify-content: center;
+        align-items: center;
+
+                /* Size */
+            width: auto;
+            max-width: 300px;
+            min-width: 250px;
+
+            height: auto;
+            max-height: 104.9px;
+            min-height: 104.9px;
+
+                /* Position 2 */
+            position: absolute;
+                left: 15%;
+                top: -0.9px;
+
+                /* Отступы */
+            margin: 1px;
+            border: 2px solid black;
+
+                    /* color */
+            background-color: aquamarine;
+
+                    /* text */
+            text-transform: capitalize;
+}
+.block4{
+    background-color: skyblue;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 300px;
+    width: auto;
+    height: 104.9px;
+    margin: 1px;
+    border: 2px solid black;
+}
+.block5{
+    display:flex;
+    
+            /* Position 1 */
+        justify-content: center;
+        align-items: center;
+
+                /* Size */
+            width: auto;
+            max-width: 300px;
+            min-width: 250px;
+
+            height: auto;
+            max-height: 50px;
+            min-height: 50px;
+
+                /* Position 2 */
+            position: absolute;
+                left: 15%;
+                top: 108px;
+
+                /* Отступы */
+            margin: 1px;
+            border: 2px solid black;
+
+                    /* color */
+            background-color: ghostwhite;
+
+                    /* text */
+            text-transform: capitalize;
+}
+.block6{
+    display:flex;
+    
+            /* Position 1 */
+        justify-content: center;
+        align-items: center;
+
+                /* Size */
+            width: auto;
+            max-width: 300px;
+            min-width: 250px;
+
+            height: auto;
+            max-height: 50px;
+            min-height: 50px;
+
+                /* Position 2 */
+            position: absolute;
+                left: 15%;
+                top: 162px;
+
+                /* Отступы */
+            margin: 1px;
+            border: 2px solid black;
+
+                    /* color */
+            background-color: gainsboro;
+
+                    /* text */
+            text-transform: capitalize;
+}
+/* #TODO: Добавить стили для элементов из расширенной информации */
+body{
+    text-align: center;
+}
+a{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin: auto;
+}

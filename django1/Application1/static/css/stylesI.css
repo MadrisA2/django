@@ -1,0 +1,19 @@
+.Body{
+    text-align: center;
+    font-size:large;
+}
+.Listt{
+    transform: translate(270%);
+    text-align: center;
+    justify-content: center;
+    border: 2px solid black;
+    margin: 2px;
+    height: auto;
+    max-width: 300px;
+    width: auto;
+    padding: 5px;
+}
+.textT{
+    transform: translate(-0.5px);
+}
+/* #TODO: Добавить стили для элементов из расширенной информации */
