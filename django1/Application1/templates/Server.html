@@ -1,58 +1,59 @@
-<!DOCTYPE html>
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=320, initial-scale=1.0">
-        <link rel="stylesheet" href="{% static "css/styles.css" %}" />
-        <title>{{info.label}} Info</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=320, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static " css/styles.css" %}" />
+    <title>{{info.label}} Info</title>
+</head>
 
 
-    <body>
-        <h1 class="label">{{info.label}}</h1>
-        <div class="blocks">
-            <big>
-                <i>
-                    <div class="block1">
-                        Label: {{info.label}}   <br>
-                        Region: {{info.region}}
-                    </div>
-                    
-                    <div class="block2">
-                        Players: {{info.clientC}} / {{info.connectionsL}}
-                    </div>
+<body>
+    <h1 class="label">{{info.label}}</h1>
+    <div class="blocks">
+        <big>
+            <i>
+                <div class="block1">
+                    Label: {{info.label}} <br>
+                    Region: {{info.region}}
+                </div>
 
-                    <div class="block3">
-                        Top Player:<br>
-                        Name:  {{info.TopPN}}<br>
-                        Score: {{info.TopPS}}<br>
-                        Level: {{info.TopPL}}
-                    </div>
+                <div class="block2">
+                    Players: {{info.clientC}} / {{info.connectionsL}}
+                </div>
 
-                    <div class="block4">
-                        Event: {{info.event}}<br>
-                    </div>
+                <div class="block3">
+                    Top Player:<br>
+                    Name: {{info.TopPN}}<br>
+                    Score: {{info.TopPS}}<br>
+                    Level: {{info.TopPL}}
+                </div>
 
-                    <div class="block5">
-                        Version: {{info.version}}<br>
-                    </div>
+                <div class="block4">
+                    Event: {{info.event}}<br>
+                </div>
 
-                    <div class="block6">
-                        {% if info.private_TorF %}
-                        officiallys server: No<br>
-                        {%else%}
-                        officiallys server: Yes<br>
-                        {% endif%}
-                    </div>
-                    <!-- 
+                <div class="block5">
+                    Version: {{info.version}}<br>
+                </div>
+
+                <div class="block6">
+                    {% if info.private_TorF %}
+                    officiallys server: No<br>
+                    {%else%}
+                    officiallys server: Yes<br>
+                    {% endif%}
+                </div>
+                <!-- 
                     #TODO:(RequestForServersExtendedInfo) Сделать блоки с расширенной инофрмацией и их обработку.
                     -->
 
-                </i>
-            </big>
-        </div>
-                <big><a href="/" class="down">К списку серверов</a></big>
-    </body>
+            </i>
+        </big>
+    </div>
+    <big><a href="/" class="down">К списку серверов</a></big>
+</body>
+
 </html>

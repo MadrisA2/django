@@ -28,12 +28,7 @@ class MessageBox():
         self.lib.MsBox(hWnd,lpText,lpCaption, uType1, uType2, uType3, uType4, uType5)
     
 
-
-# ErorrBox.CreateMessageBox(hWnd=None,lpText=f"ConnectionError, status_code = {request.status_code}", lpCaption="Error",uType1=0x0,uType2=0x0, uType3=0x0, uType4=0x10, uType5=0x0)
-
-
 request = get("https://announcement-amsterdam-0-alpaca.dynast.cloud/all")
-
 
 if request.status_code == 200:    
     data = request.json()

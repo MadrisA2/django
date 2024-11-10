@@ -18,8 +18,7 @@ from Application1 import views
 from django.urls import path, re_path, include
 
 parrents = [
-    path("<int:id>/", views.SDIndex),
-    path("<int:id>/Extended/", views.SEIndex), #fix:    Не работает
+    path("<int:id>/<str:DorE>/", views.SIndex),
 ]
 urlpatterns = [
     re_path(r"^about", views.about),
