@@ -25,8 +25,7 @@ class MessageBox():
             uType3:c_uint,
             uType4:c_uint,
             uType5:c_uint): 
-        self.lib.MsBox(hWnd,lpText,lpCaption, uType1, uType2, uType3, uType4, uType5)
-    
+        self.lib.MsBox(hWnd,lpText,lpCaption, uType1, uType2, uType3, uType4, uType5)    
 
 request = get("https://announcement-amsterdam-0-alpaca.dynast.cloud/all")
 
@@ -37,7 +36,6 @@ else:
     ErorrBox.CreateMessageBox(hWnd=None,lpText=f"ConnectionError, status_code = {request.status_code}", lpCaption="Error",uType1=0x0,uType2=0x0, uType3=0x0, uType4=0x10, uType5=0x0)
 
 ServersDefualtInfo = {}
-
 @lru_cache(maxsize=None)
 def RequestForServersDefualtInfo() -> NoReturn:
         for index, server in enumerate(data["servers"], start=1):
@@ -81,46 +79,16 @@ def RequestForServersDefualtInfo() -> NoReturn:
         return 0
         
 ServersExtendedInfo = {}
-#TODO: Доделать  RequestForServersExtendedInfo 
-def RequestForServersExtendedInfo() -> NoReturn :
+def RequestForServersExtendedInfo() -> NoReturn:
         for index, server in enumerate(data["servers"], start=1):
             try:
                 events_NAME = server["events"][0]["kind"]["type"]
                 private = server["private"]           
                 label = server["label"]
-                ssl_port = server["ssl_port"]
-                ssl_ping_port = server["ssl_ping_port"]
-                port = server["port"]
-                ping_port = server["ping_port"]
-                peer_key = server["peer_key"]
-                client_count = server["client_count"]
-                connections_limit = server["connections_limit"]
-                map = server["map"]
-                map_hash = server["map_hash"]
-                game_mode = server["game_mode"]
-                ip = server["ip"]
-                top_player_name = server["top_player_name"]
-                top_player_score = server["top_player_score"]
-                top_player_level = server["top_player_level"]
-                load_avg = server["load_avg"]
-                load_max = server["load_max"]
-                backend = server["backend"]
-                region = server["region"]
-                version = server["version"]
-                custom_mode = server["custom_mode"]
-                private = server["private"]
-                frame_drop = server["frame_drop"]
-                server_time = server["server_time"]
-                events_ALL_INFO = server["events"]
-                events_NAME = server["events"][0]["kind"]["type"]
-                new_io = server["new_io"]
-                pubsub_connected = server["pubsub_connected"]
-                lifetime = server["lifetime"]
-                label = server["label"]
-                ServersExtendedInfo.setdefault(index, #TODO:(Try) Добавить элементы в словарь
+                ServersExtendedInfo.setdefault(index,
                                             {
                                                 #?      Defualt
-                                            "label": label, # server["label"] -> label
+                                            "label": label,
                                             "region": server["region"],
                                             "clientC": server["client_count"],
                                             "connectionsL": server["connections_limit"],
@@ -131,6 +99,25 @@ def RequestForServersExtendedInfo() -> NoReturn :
                                             "version": server["version"],
                                             "private_TorF": private,
                                                 #?       Extended
+                                            "sslPort": server["ssl_port"],
+                                            "sslPPort": server["ssl_ping_port"],
+                                            "port": server["port"],
+                                            "PPort": server["ping_port"],
+                                            "ip": server["ip"],
+                                            "PKey": server["peer_key"],
+                                            "map": server["map"],
+                                            "GM": server["game_mode"],
+                                            "CM": server["custom_mode"],
+                                            "Lavg": server["load_avg"],
+                                            "Lmax": server["load_max"],
+                                            "backend": server["backend"],
+                                            "frameDrop": server["frame_drop"],
+                                            "ServerTime": server["server_time"],
+                                            "ServerLifetime": server["lifetime"],
+                                            "Lmax": server["load_max"],
+                                            "AllEvents": server["events"],
+                                            "NewIo": server["new_io"],
+                                            "PubsubConn": server["pubsub_connected"],
                                             },
                                     )
             except IndexError: # Если сервер приватный то у него нету ивентов.
@@ -138,9 +125,9 @@ def RequestForServersExtendedInfo() -> NoReturn :
             finally:
                     private = server["private"]  
                     label = server["label"]
-                    ServersExtendedInfo.setdefault(index, #TODO:(Block:Finally) Добавить элементы в словарь 
+                    ServersExtendedInfo.setdefault(index,
                                                 {
-                                                "label": label, # server["label"] -> label
+                                                "label": label,
                                                 "region": server["region"],
                                                 "clientC": server["client_count"],
                                                 "connectionsL": server["connections_limit"],
@@ -150,6 +137,25 @@ def RequestForServersExtendedInfo() -> NoReturn :
                                                 "event": events_NAME,
                                                 "version": server["version"],
                                                 "private_TorF": private,
+
+                                                "sslPort": server["ssl_port"],
+                                                "sslPPort": server["ssl_ping_port"],
+                                                "port": server["port"],
+                                                "PPort": server["ping_port"],
+                                                "ip": server["ip"],
+                                                "PKey": server["peer_key"],
+                                                "map": server["map"],
+                                                "GM": server["game_mode"],
+                                                "CM": server["custom_mode"],
+                                                "Lavg": server["load_avg"],
+                                                "Lmax": server["load_max"],
+                                                "backend": server["backend"],
+                                                "frameDrop": server["frame_drop"],
+                                                "ServerTime": server["server_time"],
+                                                "ServerLifetime": server["lifetime"],
+                                                "AllEvents": server["events"],
+                                                "NewIo": server["new_io"],
+                                                "PubsubConn": server["pubsub_connected"],
                                                 },
                                         )
         return 0
