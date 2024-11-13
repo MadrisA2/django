@@ -1,9 +1,21 @@
+.L1{
+    position: relative;
+    top: 70px;
+    right:190px;
+}
+.CheckbBox1{
+    display: flex;
+    justify-content:start;
+
+}
 .Body{
-    text-align: center;
+    display: flex;
+    /* text-align: center; */
     font-size:large;
+    justify-content: center;
+
 }
 .Listt{
-    transform: translate(270%);
     text-align: center;
     justify-content: center;
     border: 2px solid black;
@@ -12,6 +24,7 @@
     max-width: 300px;
     width: auto;
     padding: 5px;
+    display:block;
 }
 .textT{
     transform: translate(-0.5px);

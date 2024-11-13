@@ -13,18 +13,21 @@
 <body>
     <div class="Body">
         <h1>Список серверов:</h1>
-        {% for index, server in info.items %}
-        <div class="Listt">
-            <div class="textT">
-                <big>
-                    <a href="server/{{ index }}/Default" class="server-link">{{ index }}. {{ server.label }}</a>
-                </big>
+        <div class="L1">
+            {% for index, server in info.items %}
+            <div class="Listt">
+                <div class="textT">
+                    <big>
+                        <a href="server/{{ index }}/Default" class="server-link">{{ index }}. {{ server.label }}</a>
+                    </big>
+                </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
+        
     </div>
-
-    <div style="display: flex; transform: translate(15%, -500%);">
+<!-- transform: translate(15%, -500%); -->
+    <div class = "CheckBox1">
         <form id="infoForm">
             <fieldset>
                 <legend>Какую информацию вы хотите получить?</legend>
